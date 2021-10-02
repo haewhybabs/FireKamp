@@ -7,11 +7,16 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { lightBrown} from '../../constants/colors';
 import CardItem from './CardItem';
 export default function index() {
+    const [showUploading,setShowUploading]=React.useState(false);
+    const [showNextUp,setShowNextUp]=React.useState(false);
+    const [showCompleted,setShowCompleted]=React.useState(false);
+    const [showUncompleted,setShowUncompleted]=React.useState(false);
+
     return (
         <View style={styles.container}>
             <Header />
-            {/* uploading */}
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                {/* uploading */}
                 <View>
                     <View style={styles.pageWrapper}>
                         <View style={styles.pageContainer}>
@@ -22,7 +27,10 @@ export default function index() {
                             </View>
                         </View>
                         <View style={styles.underLineSection}/>
-                        <CardItem />
+                        {showUploading && ((
+                            <CardItem />
+                        ))}
+                        
                     </View>
                 </View>
                 {/* Next up */}
@@ -36,9 +44,14 @@ export default function index() {
                             </View>
                         </View>
                         <View style={styles.underLineSection}/>
-                        <CardItem />
-                        <CardItem />
-                        <CardItem />
+                        {showNextUp && ((
+                            <>
+                                <CardItem />
+                                <CardItem />
+                                <CardItem />
+                            </>
+                        ))}
+                        
                     </View>
                 </View>
                 {/* Completed */}
@@ -52,9 +65,13 @@ export default function index() {
                             </View>
                         </View>
                         <View style={styles.underLineSection}/>
-                        <CardItem />
-                        <CardItem />
-                        <CardItem />
+                        {showCompleted && ((
+                            <>
+                                <CardItem />
+                                <CardItem />
+                                <CardItem />
+                            </>
+                        ))}
                     </View>
                 </View>
 
@@ -69,9 +86,13 @@ export default function index() {
                             </View>
                         </View>
                         <View style={styles.underLineSection}/>
-                        <CardItem />
-                        <CardItem />
-                        <CardItem />
+                        {showUncompleted && ((
+                            <>
+                                <CardItem />
+                                <CardItem />
+                                <CardItem />
+                            </>
+                        ))}
                     </View>
                 </View>
             </ScrollView>
