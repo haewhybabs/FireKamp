@@ -23,8 +23,6 @@ export default Home =observer((props)=>{
     const currentUploadId = React.useRef(null);
     React.useEffect(()=>{
         const timeSpent = now-startTime;
-        console.log(timeSpent);
-        console.log(currentUploadId.current);
         if(timeSpent>=uploadingTime.current*1000 && currentUploadId.current){
             MainItems.updateStatus(currentUploadId.current,status.completed);
             // currentUploadId.current=null;
@@ -83,7 +81,6 @@ export default Home =observer((props)=>{
             setShowNextUp(true);
             newItem.status = status.nextUp;
             MainItems.generalStore.push(newItem);
-            console.log(MainItems.generalStore)
         }
         
     }
