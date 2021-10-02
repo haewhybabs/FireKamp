@@ -1,10 +1,80 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-
+import { View, Text, processColor, ScrollView } from 'react-native';
+import Header from '../../components/Header';
+import { styles } from './styles';
+import Texts from '../../components/Texts';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { lightBrown} from '../../constants/colors';
+import CardItem from './CardItem';
 export default function index() {
     return (
-        <View>
-            <Text>Home</Text>
+        <View style={styles.container}>
+            <Header />
+            {/* uploading */}
+            <ScrollView>
+                <View>
+                    <View style={styles.pageWrapper}>
+                        <View style={styles.pageContainer}>
+                            <Texts style={styles.levelText}>Uploading</Texts>
+                            <View style={styles.pageContainer}>
+                                <Texts style={styles.cancelText}>cancel uploads</Texts>
+                                <AntDesign name="up" size={15} color={lightBrown}/>
+                            </View>
+                        </View>
+                        <View style={styles.underLineSection}/>
+                        <CardItem />
+                    </View>
+                </View>
+                {/* Next up */}
+                <View>
+                    <View style={styles.pageWrapper}>
+                        <View style={styles.pageContainer}>
+                            <Texts style={styles.levelText}>Next up</Texts>
+                            <View style={styles.pageContainer}>
+                                <Texts style={styles.cancelText}>cancel all</Texts>
+                                <AntDesign name="up" size={15} color={lightBrown}/>
+                            </View>
+                        </View>
+                        <View style={styles.underLineSection}/>
+                        <CardItem />
+                        <CardItem />
+                        <CardItem />
+                    </View>
+                </View>
+                {/* Completed */}
+                <View>
+                    <View style={styles.pageWrapper}>
+                        <View style={styles.pageContainer}>
+                            <Texts style={styles.levelText}>Completed</Texts>
+                            <View style={styles.pageContainer}>
+                                <Texts style={styles.cancelText}>cancel all</Texts>
+                                <AntDesign name="up" size={15} color={lightBrown}/>
+                            </View>
+                        </View>
+                        <View style={styles.underLineSection}/>
+                        <CardItem />
+                        <CardItem />
+                        <CardItem />
+                    </View>
+                </View>
+
+                {/* Uncompleted */}
+                <View>
+                    <View style={styles.pageWrapper}>
+                        <View style={styles.pageContainer}>
+                            <Texts style={styles.levelText}>UnCompleted</Texts>
+                            <View style={styles.pageContainer}>
+                                <Texts style={styles.cancelText}>cancel all</Texts>
+                                <AntDesign name="up" size={15} color={lightBrown}/>
+                            </View>
+                        </View>
+                        <View style={styles.underLineSection}/>
+                        <CardItem />
+                        <CardItem />
+                        <CardItem />
+                    </View>
+                </View>
+            </ScrollView>
         </View>
     )
 }

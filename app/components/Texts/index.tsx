@@ -1,6 +1,6 @@
 import React from "react";
 import { Platform, Text, Dimensions, PixelRatio} from "react-native";
-import { textColor } from "../../constants/colors";
+import { black, textColor } from "../../constants/colors";
 interface TextsProps{
   children?:any,
   style?:any,
@@ -34,17 +34,8 @@ export default function Texts({
   return (
     <Text
       style={[
-        {color:textColor},
+        {color:black},
         style,
-        {
-          fontFamily: medium
-            ? "Poppins-Medium"
-            : bold
-            ? "Poppins-Bold"
-            : regular
-            ? "Poppins-Regular"
-            : "Poppins-Regular",
-        },
         bigFont && { fontSize: 24, lineHeight: 32 },
         scale && { fontSize: scale && actuatedNormalize(12) },
       ]}
