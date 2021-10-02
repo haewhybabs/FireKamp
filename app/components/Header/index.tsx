@@ -5,7 +5,7 @@ import { screenHeight, screenWidth } from '../../constants/dimensions';
 import Texts from '../Texts';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-export default function index() {
+export default function index({handleAddUpload}) {
     return (
         <View style={styles.container}>
             <View style={styles.headerWrapper}>
@@ -13,7 +13,7 @@ export default function index() {
                     <Texts style={styles.textStyle}>Manage Files</Texts>
                 </View>
                 <View style={styles.rightWrapper}> 
-                    <AntDesign name="plus" size={25} color={lightBlue}/>
+                    <AntDesign name="plus" size={25} color={lightBlue} onPress={handleAddUpload}/>
                 </View>
             </View>
         </View>

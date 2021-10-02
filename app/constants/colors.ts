@@ -9,3 +9,4 @@ export const green="#00BC78";
 export const midTextColor='#222222';
 export const lightTextColor ='#9E9E9E';
 export const progressDefaultColor='rgba(154, 154, 154, 0.4)';
+export const red ='#EE4B69';

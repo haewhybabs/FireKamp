@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { cardColor, lightBlue, lightTextColor, lineColor, midTextColor, white } from "../../constants/colors";
+import { cardColor, green, lightBlue, lightTextColor, lineColor, midTextColor, white } from "../../constants/colors";
 import { screenWidth } from "../../constants/dimensions";
 export const styles = StyleSheet.create({
     container:{
@@ -48,5 +48,13 @@ export const styles = StyleSheet.create({
        
         alignItems:'center',
         paddingRight:screenWidth(5)
+    },
+    completedIconWrapper:{
+        width:30,
+        height:30,
+        borderRadius:30/2,
+        backgroundColor:green,
+        justifyContent:'center',
+        alignItems:'center'
     }
 })
