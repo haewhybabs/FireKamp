@@ -1,10 +1,24 @@
 import React from 'react'
-import { View, Text} from 'react-native'
+import { View, Text,Image,StyleSheet} from 'react-native'
 import Texts from '../../components/Texts';
-export default function index() {
+import { white } from '../../constants/colors';
+export default function index({navigation,route}) {
+    React.useEffect(()=>{
+        setTimeout(() => {
+            navigation.navigate('AppStack')
+        }, 3000);
+    })
     return (
-        <View>
-            <Texts >Splash</Texts>
+        <View style={styles.container}>
+            <Image source={require('../../assets/images/logo.png')}/>
         </View>
     )
 }
+const styles=StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:white,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+})
